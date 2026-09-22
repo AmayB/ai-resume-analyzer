@@ -44,7 +44,6 @@ function App() {
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState<AnalysisResult | null>(null);
   const [error, setError] = useState("");
-  const API_URL = import.meta.env.VITE_API_URL;
 
   const analyzeResume = async () => {
     if (!resume) {
@@ -67,8 +66,16 @@ function App() {
     formData.append("job_description", jobDescription);
 
     try {
+      const apiUrl = import.meta.env.VITE_API_URL;
+
+      if (!apiUrl) {
+        throw new Error(
+          "API URL is not configured."
+        );
+      }
+
       const response = await fetch(
-        `${API_URL}/analyze`,
+        `${apiUrl}/analyze`,
         {
           method: "POST",
           body: formData,
@@ -100,7 +107,9 @@ function App() {
   return (
     <div className="app">
       <nav className="navbar">
-        <div className="logo">AI RESUME ANALYZER</div>
+        <div className="logo">
+          AI RESUME ANALYZER
+        </div>
 
         <a
           className="portfolio-link"
@@ -137,7 +146,9 @@ function App() {
               />
 
               <div className="upload-content">
-                <div className="upload-icon">↑</div>
+                <div className="upload-icon">
+                  ↑
+                </div>
 
                 {resume ? (
                   <>
@@ -326,6 +337,7 @@ function App() {
                       >
                         <div>
                           <span>BEFORE</span>
+
                           <p>
                             {bullet.original}
                           </p>
@@ -333,6 +345,7 @@ function App() {
 
                         <div>
                           <span>AFTER</span>
+
                           <p>
                             {bullet.improved}
                           </p>
