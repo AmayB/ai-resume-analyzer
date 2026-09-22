@@ -1,0 +1,191 @@
+.results {
+  border-top: 2px solid #000000;
+  padding: 80px 0 100px;
+}
+
+.results-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 40px;
+  margin-bottom: 50px;
+}
+
+.results-header h2 {
+  margin: 0;
+  font-size: 40px;
+  font-weight: 900;
+  letter-spacing: -2px;
+}
+
+.score {
+  min-width: 170px;
+  text-align: right;
+}
+
+.score strong {
+  display: block;
+  font-size: 72px;
+  line-height: 0.9;
+  font-weight: 900;
+  letter-spacing: -4px;
+}
+
+.score span {
+  display: block;
+  margin-top: 12px;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+.summary {
+  border: 2px solid #000000;
+  padding: 30px;
+  margin-bottom: 70px;
+}
+
+.summary p {
+  max-width: 800px;
+  margin: 0;
+  font-size: 19px;
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+.result-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  margin-bottom: 80px;
+}
+
+.result-heading {
+  display: flex;
+  align-items: baseline;
+  gap: 18px;
+  border-top: 2px solid #000000;
+  padding-top: 20px;
+  margin-bottom: 30px;
+}
+
+.result-heading span {
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.result-heading h3 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 900;
+  letter-spacing: -1px;
+}
+
+.skill-item {
+  border-bottom: 1px solid #cccccc;
+  padding: 20px 0;
+}
+
+.skill-item strong {
+  font-size: 17px;
+  font-weight: 800;
+}
+
+.skill-item p {
+  margin: 8px 0 0;
+  color: #666666;
+  line-height: 1.5;
+}
+
+.result-block {
+  margin-bottom: 80px;
+}
+
+.keyword-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.keyword-list span {
+  border: 2px solid #000000;
+  padding: 12px 16px;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.recommendation-list {
+  border-bottom: 2px solid #000000;
+}
+
+.recommendation {
+  display: grid;
+  grid-template-columns: 60px 1fr;
+  gap: 20px;
+  border-top: 1px solid #cccccc;
+  padding: 24px 0;
+}
+
+.recommendation strong {
+  font-size: 13px;
+}
+
+.recommendation p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+.bullet-list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.bullet-improvement {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border: 2px solid #000000;
+}
+
+.bullet-improvement > div {
+  padding: 25px;
+}
+
+.bullet-improvement > div + div {
+  border-left: 2px solid #000000;
+}
+
+.bullet-improvement span {
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+}
+
+.bullet-improvement p {
+  margin: 15px 0 0;
+  line-height: 1.6;
+}
+
+@media (max-width: 700px) {
+  .results-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .score {
+    text-align: left;
+  }
+
+  .result-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .bullet-improvement {
+    grid-template-columns: 1fr;
+  }
+
+  .bullet-improvement > div + div {
+    border-left: none;
+    border-top: 2px solid #000000;
+  }
+}
